@@ -1,23 +1,15 @@
 import React from 'react';
 import {View, StyleSheet, Image, Text, ScrollView} from 'react-native'
-import colors from "../config/colors";
 
-const items = [
-  { image: require("../assets/images/shopping-bag.png"), text: "Récupérer" },
-  { image: require("../assets/images/soft-drink.png"), text: "Boissons soft" },
-  { image: require("../assets/images/bread.png"), text: "Boulangerie" },
-  { image: require("../assets/images/fast-food.png"), text: "Fast Foods" },
-  { image: require("../assets/images/deals.png"), text: "Offres" },
-  { image: require("../assets/images/coffee.png"), text: "Café et thé" },
-  { image: require("../assets/images/desserts.png"), text: "Desserts" },
-];
+import colors from "../config/colors";
+import categories from '../data/categories'
 
 export default function Categories() {
   return (
     <View style={styles.container}>
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
 
-        {items.map( (item, index) => (
+        {categories.map( (item, index) => (
           <View style={styles.itemContainer} key={index}>
             <Image style={styles.image} source={item.image} />
             <Text style={styles.text}>{item.text}</Text>

@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "babel-plugin-inline-dotenv": "^1.6.0",
     "expo": "^44.0.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
