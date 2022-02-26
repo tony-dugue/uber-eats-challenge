@@ -1,17 +1,23 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet, View} from 'react-native'
+
 import HeaderTabs from "../components/HeaderTabs";
 import SearchBar from "../components/SearchBar";
+import Categories from "../components/Categories";
 
 import colors from "../config/colors";
 
 export default function Home() {
   return (
     <SafeAreaView style={styles.container}>
+
       <View style={styles.header}>
         <HeaderTabs />
         <SearchBar />
       </View>
+
+      <Categories />
+
     </SafeAreaView>
   );
 }
