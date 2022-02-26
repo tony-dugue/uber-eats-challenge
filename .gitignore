@@ -64,4 +64,4 @@ buck-out/
 web-build/
 
 # App
-.env
+.env.local
