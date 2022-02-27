@@ -1,3 +1,5 @@
 {
-  "plugins": ["inline-dotenv"]
+  "plugins": [
+    ["module:react-native-dotenv"]
+  ]
 }

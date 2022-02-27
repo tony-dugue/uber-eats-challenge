@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import {SafeAreaView, StyleSheet, View, ScrollView} from 'react-native'
 
+import {YELP_API_KEY} from "@env"
+
 import colors from "../config/colors";
 
 import HeaderTabs from "../components/HeaderTabs";
@@ -11,11 +13,12 @@ import RestaurantList from "../components/RestaurantList";
 export default function Home() {
 
   const [restaurantData, setRestaurantData] = useState([])
+  const [city, setCity] = useState("Rennes")
 
   const getRestaurantsFromYelp = () => {
 
-    const yelpUrl = "https://api.yelp.com/v3/businesses/search?term=restaurants&location=Rennes"
-    const apiOptions = { headers: { Authorization: `Bearer ${process.env.YELP_API_KEY}`} }
+    const yelpUrl = `https://api.yelp.com/v3/businesses/search?term=restaurants&location=${city}`
+    const apiOptions = { headers: { Authorization: `Bearer ${YELP_API_KEY}`} }
 
     return fetch(yelpUrl, apiOptions)
       .then( res => res.json())
@@ -31,7 +34,7 @@ export default function Home() {
 
       <View style={styles.header}>
         <HeaderTabs />
-        <SearchBar />
+        <SearchBar cityHandler={setCity} />
       </View>
 
       <ScrollView showsVerticalScrollIndicator={false}>
