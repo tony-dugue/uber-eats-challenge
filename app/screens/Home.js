@@ -4,12 +4,15 @@ import {SafeAreaView, StyleSheet, View, ScrollView} from 'react-native'
 //import {YELP_API_KEY} from "@env"
 
 import colors from "../config/colors";
+import {Divider} from "react-native-elements";
+
+import localRestaurants from "../data/localRestaurants";
 
 import HeaderTabs from "../components/HeaderTabs";
 import SearchBar from "../components/SearchBar";
 import Categories from "../components/Categories";
 import RestaurantList from "../components/RestaurantList";
-import localRestaurants from "../data/localRestaurants";
+import BottomTabs from "../components/BottomTabs";
 
 export default function Home() {
 
@@ -53,6 +56,10 @@ export default function Home() {
         <Categories />
         <RestaurantList restaurantData={restaurantData} />
       </ScrollView>
+
+      <Divider width={1} />
+
+      <BottomTabs />
 
     </SafeAreaView>
   );
