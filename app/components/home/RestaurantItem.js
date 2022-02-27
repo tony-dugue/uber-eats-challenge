@@ -2,7 +2,7 @@ import React from 'react';
 import {View, StyleSheet, Image, TouchableOpacity, Text} from 'react-native'
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
-import colors from "../config/colors";
+import colors from "../../config/colors";
 
 export default function RestaurantItem({ item }) {
   return (

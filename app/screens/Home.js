@@ -8,11 +8,11 @@ import {Divider} from "react-native-elements";
 
 import localRestaurants from "../data/localRestaurants";
 
-import HeaderTabs from "../components/HeaderTabs";
-import SearchBar from "../components/SearchBar";
-import Categories from "../components/Categories";
-import RestaurantList from "../components/RestaurantList";
-import BottomTabs from "../components/BottomTabs";
+import HeaderTabs from "../components/home/HeaderTabs";
+import SearchBar from "../components/home/SearchBar";
+import Categories from "../components/home/Categories";
+import RestaurantList from "../components/home/RestaurantList";
+import BottomTabs from "../components/home/BottomTabs";
 
 export default function Home() {
 

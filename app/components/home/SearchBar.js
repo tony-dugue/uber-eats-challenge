@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import {View, StyleSheet, FlatList, Text, TextInput} from 'react-native'
 
-import cities from '../data/cities.js'
-import colors from "../config/colors";
+import cities from '../../data/cities.js'
+import colors from "../../config/colors";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import AntDesign from "react-native-vector-icons/AntDesign";
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, TouchableOpacity, Text} from 'react-native'
 
-import colors from "../config/colors";
+import colors from "../../config/colors";
 
 export default function HeaderTabsButton({ text, activeTab, setActiveTab }) {
   return (

@@ -1,8 +1,8 @@
 import React from 'react';
 import {View, StyleSheet, Image, Text, ScrollView} from 'react-native'
 
-import colors from "../config/colors";
-import categories from '../data/categories'
+import colors from "../../config/colors";
+import categories from '../../data/categories'
 
 export default function Categories() {
   return (

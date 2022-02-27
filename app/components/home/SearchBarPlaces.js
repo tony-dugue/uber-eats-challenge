@@ -4,7 +4,7 @@ import {View, StyleSheet, Text} from 'react-native'
 import {GooglePlacesAutocomplete} from "react-native-google-places-autocomplete";
 import {GOOGLE_PLACES_API_KEY} from "@env"
 
-import colors from "../config/colors";
+import colors from "../../config/colors";
 
 import Ionicons from "react-native-vector-icons/Ionicons";
 import AntDesign from "react-native-vector-icons/AntDesign";
