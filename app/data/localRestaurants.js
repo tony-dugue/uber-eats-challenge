@@ -8,7 +8,8 @@ const localRestaurants = [
     rating: 4.5,
     location: {
       city: "Rennes",
-    }
+    },
+    service: ["à emporter"]
   },
   {
     name: "Restaurant de l'écluse (Dinard)",
@@ -19,7 +20,8 @@ const localRestaurants = [
     rating: 3.7,
     location: {
       city: "Dinard",
-    }
+    },
+    service: ["livraison", "à emporter"]
   },
   {
     name: "India's Grill (Dinan)",
@@ -30,7 +32,8 @@ const localRestaurants = [
     rating: 4.9,
     location: {
       city: "Dinan",
-    }
+    },
+    service: ["livraison", "à emporter"]
   },
   // modèle Yelp
   {
@@ -60,7 +63,8 @@ const localRestaurants = [
       state: "CA",
       address1: "373 Columbus Ave",
       zip_code: "94133"
-    }
+    },
+    service: ["livraison", "à emporter"]
   },
 ];
 

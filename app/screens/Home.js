@@ -15,6 +15,7 @@ export default function Home() {
 
   const [restaurantData, setRestaurantData] = useState([])
   const [city, setCity] = useState("Rennes")
+  const [activeTab, setActiveTab] = useState("Livraison")
 
 /*
   const getRestaurantsFromYelp = () => {
@@ -23,7 +24,9 @@ export default function Home() {
 
       return fetch(yelpUrl, apiOptions)
         .then( res => res.json())
-        .then(json => setRestaurantData(json.businesses))
+        .then(json => setRestaurantData(json.businesses.filter( business => {
+          business.transactions.includes(activeTab.toLowerCase())
+        })))
         .catch( err => console.log(err.description))
   }
 */
@@ -31,16 +34,18 @@ export default function Home() {
   useEffect( () => {
     //getRestaurantsFromYelp()
 
-    const restaurantFilterByCity = localRestaurants.filter( restaurant => restaurant.location.city === city)
+    const restaurantFilterByCity = localRestaurants.filter( restaurant => {
+      return restaurant.location.city === city && restaurant.service.includes(activeTab.toLowerCase())
+    })
     setRestaurantData(restaurantFilterByCity)
 
-  }, [city])
+  }, [city, activeTab])
 
   return (
     <SafeAreaView style={styles.container}>
 
       <View style={styles.header}>
-        <HeaderTabs />
+        <HeaderTabs activeTab={activeTab} setActiveTab={setActiveTab} />
         <SearchBar cityHandler={setCity} />
       </View>
 
