@@ -1,7 +1,7 @@
 const foods = [
   {
     title: "Lasagnes",
-    description: "Avec laitue, tomates, beuure et sauce bechamel",
+    description: "Avec laitue, tomates, beurre et sauce bechamel",
     price: "$13.50",
     image: "https://www.galbani.fr/wp-content/uploads/2017/07/shutterstock_142426168-800x600.jpg"
   },

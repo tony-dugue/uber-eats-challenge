@@ -15,7 +15,7 @@ export default function RestaurantItem({ item }) {
 
 const RestaurantImage = ({ image }) => (
   <View>
-    <Image style={styles.restaurantImage} source={{ uri: image }}/>
+    <Image style={styles.restaurantImage} source={{ uri: image !== "" ? image : "https://archive.org/download/no-photo-available/no-photo-available.png" }}/>
 
     <TouchableOpacity style={styles.restaurantImageLike}>
       <MaterialCommunityIcons name='heart-outline' size={25} color={colors.white}/>

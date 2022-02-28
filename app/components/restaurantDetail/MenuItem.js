@@ -1,14 +1,20 @@
 import React from 'react';
 import {View, StyleSheet, Text, Image} from 'react-native'
+import BouncyCheckbox from "react-native-bouncy-checkbox";
 
 export default function MenuItem({ food }) {
   return (
     <View style={styles.itemContainer}>
 
+      <BouncyCheckbox
+        iconStyle={{ borderColor: "lightgrey", borderRadius: 0 }}
+        fillColor="green"
+      />
+
       <View style={styles.itemInfo}>
         <Text style={styles.itemTitle}>{food.title}</Text>
         <Text>{food.description}</Text>
-        <Text>{food.price}</Text>
+        <Text style={styles.itemPrice}>{food.price}</Text>
       </View>
 
       <View>
@@ -26,12 +32,16 @@ const styles = StyleSheet.create({
     margin: 20
   },
   itemInfo: {
-    width: 240,
-    justifyContent: "space-evenly"
+    flex: 1,
+    justifyContent: "space-evenly",
+    paddingRight: 15,
   },
   itemTitle: {
     fontSize: 19,
     fontWeight: "600"
+  },
+  itemPrice: {
+    paddingTop: 5
   },
   itemImage: {
     width: 100,
