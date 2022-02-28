@@ -14,7 +14,7 @@ import Categories from "../components/home/Categories";
 import RestaurantList from "../components/home/RestaurantList";
 import BottomTabs from "../components/home/BottomTabs";
 
-export default function Home() {
+export default function Home({ navigation }) {
 
   const [restaurantData, setRestaurantData] = useState([])
   const [city, setCity] = useState("Rennes")
@@ -54,7 +54,7 @@ export default function Home() {
 
       <ScrollView showsVerticalScrollIndicator={false}>
         <Categories />
-        <RestaurantList restaurantData={restaurantData} />
+        <RestaurantList restaurantData={restaurantData} navigation={navigation} />
       </ScrollView>
 
       <Divider width={1} />

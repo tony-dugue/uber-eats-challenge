@@ -1,27 +1,16 @@
 import React from 'react';
 import {View, StyleSheet, Text, Image} from 'react-native'
 
-const restaurantInfo =  {
-  name: "Farmhouse Kitchen Thai Cuisine",
-  image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cmVzdGF1cmFudCUyMGludGVyaW9yfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80",
-  price: "$$",
-  reviews: "1500",
-  rating: 4.5,
-  categories: [
-    { title: "Thai" },
-    { title: "Comfort Food" }
-  ]
-}
+export default function About({ route }) {
 
-const { name, image, price, reviews, rating, categories } = restaurantInfo
+  const { name, image_url, price, reviews, rating, categories } = route.params.restaurant
 
-const formattedCategories = categories.map( (cat) => cat.title).join(" • ")
-const description = `${formattedCategories} ${price ? " • " + price : ""} • 🎫 • ${rating}⭐ (${reviews}+)`
+  const formattedCategories = categories?.map( (cat) => cat.title).join(" • ")
+  const description = `${formattedCategories} ${price ? " • " + price : ""} • 🎫 • ${rating}⭐ (${reviews}+)`
 
-export default function About() {
   return (
     <View style={styles.container}>
-      <Image source={{ uri: image }} style={styles.restaurantImage} />
+      <Image source={{ uri: image_url }} style={styles.restaurantImage} />
       <Text style={styles.restaurantTitle}>{name}</Text>
       <Text style={styles.restaurantDescription}>{description}</Text>
     </View>

@@ -12,7 +12,7 @@ export default function MenuList() {
     {foods.map( (food, index) => (
       <View key={index}>
         <MenuItem food={food} />
-        <Divider width={0.5} orientation="vertical" />
+        <Divider width={0.5} orientation="vertical" style={{ marginHorizontal: 20 }}/>
       </View>
     ))}
     </ScrollView>
