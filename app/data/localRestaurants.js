@@ -3,7 +3,7 @@ const localRestaurants = [
     name: "Beachside Bar (Rennes)",
     image_url: "https://static.onecms.io/wp-content/uploads/sites/9/2020/04/24/ppp-why-wont-anyone-rescue-restaurants-FT-BLOG0420.jpg",
     categories: [{ title: "Café"}, {title: "Bar"}],
-    price: "$$",
+    price: "€",
     review_count: 1244,
     rating: 4.5,
     location: {
@@ -15,7 +15,7 @@ const localRestaurants = [
     name: "Restaurant de l'écluse (Dinard)",
     image_url: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cmVzdGF1cmFudCUyMGludGVyaW9yfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80",
     categories: [{ title: "Café"}, {title: "Bar"}],
-    price: "$",
+    price: "",
     review_count: 1244,
     rating: 3.7,
     location: {
@@ -27,7 +27,7 @@ const localRestaurants = [
     name: "India's Grill (Dinan)",
     image_url: "https://media.istockphoto.com/photos/empty-restaurant-interior-picture-id1290237592?b=1&k=20&m=1290237592&s=170667a&w=0&h=fgXWrrQ7qWpbiO8O_dpEVlS4JsTZYH8e3FoZ4UeoQH8=",
     categories: [{ title: "Indien"}, {title: "Bar"}],
-    price: "$$",
+    price: "€",
     review_count: 700,
     rating: 4.9,
     location: {
@@ -38,7 +38,7 @@ const localRestaurants = [
   // modèle Yelp
   {
     rating: 4.5,
-    price: "$$",
+    price: "€",
     phone: "+14154212337",
     id: "molinari-delicatessen-san-francisco",
     categories: [{alias: "delis", title: "Epicerie fine"}],

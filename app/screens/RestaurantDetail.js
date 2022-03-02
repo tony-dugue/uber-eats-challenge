@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native'
+import {View} from 'react-native'
 import {Divider} from "react-native-elements";
 
 import About from "../components/restaurantDetail/About";
@@ -11,8 +11,8 @@ export default function RestaurantDetail({ route, navigation }) {
     <View>
       <About route={route} />
       <Divider width={1.8} style={{ marginVertical: 20 }}/>
-      <MenuList />
-      <ViewCart navigation={navigation} restaurantName={route.params.name} />
+      <MenuList restaurantName={route.params.restaurant.name} />
+      <ViewCart navigation={navigation} restaurantName={route.params.restaurant.name} />
     </View>
   );
 }

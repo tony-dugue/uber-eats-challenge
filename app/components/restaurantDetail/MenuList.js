@@ -6,12 +6,12 @@ import foods from "../../data/foods";
 
 import MenuItem from "./MenuItem";
 
-export default function MenuList() {
+export default function MenuList({ restaurantName }) {
   return (
-    <ScrollView showsVerticalScrollIndicator={false}>
+    <ScrollView showsVerticalScrollIndicator={false} >
     {foods.map( (food, index) => (
       <View key={index}>
-        <MenuItem food={food} />
+        <MenuItem food={food} restaurantName={restaurantName} />
         <Divider width={0.5} orientation="vertical" style={{ marginHorizontal: 20 }}/>
       </View>
     ))}

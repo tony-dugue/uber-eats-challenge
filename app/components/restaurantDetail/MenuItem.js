@@ -2,13 +2,36 @@ import React from 'react';
 import {View, StyleSheet, Text, Image} from 'react-native'
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 
-export default function MenuItem({ food }) {
+import {useDispatch, useSelector} from "react-redux";
+
+export default function MenuItem({ food, restaurantName }) {
+
+  const dispatch = useDispatch()
+
+  const selectItem = (item, checkboxValue) => dispatch({
+    type: "ADD_TO_CART",
+    payload: {
+      ...item,
+      restaurantName: restaurantName,
+      checkboxValue: checkboxValue
+    }})
+
+  const cartItems = useSelector(state => state.cartReducer.selectedItems.items)
+
+  const isFoodInCart = (food, cartItems) => {
+    return Boolean(cartItems.find( item => item.title === food.title && item.restaurantName === restaurantName))
+  }
+
   return (
     <View style={styles.itemContainer}>
 
       <BouncyCheckbox
         iconStyle={{ borderColor: "lightgrey", borderRadius: 0 }}
         fillColor="green"
+        isChecked={isFoodInCart(food, cartItems)}
+        onPress={ (checkboxValue) => {
+          selectItem(food, checkboxValue)
+        }}
       />
 
       <View style={styles.itemInfo}>
