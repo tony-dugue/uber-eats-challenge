@@ -15,6 +15,24 @@
   </a>
 </p>
 
+## 📷 Screenshots
+***
+
+<table>
+  <tr>
+    <td><img src="./screenshots/home.png" width="300"></td>
+    <td><img src="./screenshots/restaurantDetail.png" width="300"></td>
+  <tr>
+  <tr>
+    <td><img src="./screenshots/paymentModal.png" width="300"></td>
+    <td><img src="./screenshots/loadingPayment.png" width="300"></td>
+  <tr>
+  <tr>
+    <td><img src="./screenshots/orderCompleted.png" width="300"></td>
+    <td></td>
+  <tr>
+</table>
+
 ## 🚀 Installation
 ***
 
@@ -44,9 +62,9 @@ $ yarn start
     - Web: avec n'importe quel navigateur
 
 ## Adding Native Code
+***
 
-Ce projet peut être exécuté à partir d'un navigateur Web ou de l'application client Expo. Vous pouvez constater que vous souhaitez ajouter plus de code natif plus tard. Vous pouvez le faire en éjectant le projet et en le reconstruisant vous-même.
+Ce projet peut être exécuté à partir d'un navigateur Web ou de l'application client Expo. 
+Du code natif peut être ajouté par la suite. on peut le faire en éjectant le projet et en le reconstruisant nous-même.
 
 Pour ajouter du code natif, il faut éjecter le projet avec `yarn eject`
-
-You may find that you want to add more native code later on. You can do this by ejecting the project and rebuilding it yourself.
