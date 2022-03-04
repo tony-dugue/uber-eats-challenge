@@ -7,7 +7,7 @@ import colors from "../../config/colors";
 
 import OrderItem from "./OrderItem";
 
-export default function ViewCart() {
+export default function ViewCart({ navigation }) {
 
   const [modalVisible, setModalVisible] = useState(false)
 
@@ -29,6 +29,7 @@ export default function ViewCart() {
       createdAt: firebase.firestore.FieldValue.serverTimestamp()
     })
     setModalVisible(false)
+    navigation.navigate('OrderCompleted')
   }
 
   const checkoutModalContent = () => {
