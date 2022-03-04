@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {View, StyleSheet, Text, TouchableOpacity, Modal} from 'react-native'
 import {useSelector} from "react-redux";
 import { db, firebase } from '../../../firebase'
+import LottieView from 'lottie-react-native'
 
 import colors from "../../config/colors";
 
@@ -10,6 +11,7 @@ import OrderItem from "./OrderItem";
 export default function ViewCart({ navigation }) {
 
   const [modalVisible, setModalVisible] = useState(false)
+  const [loading, setLoading] = useState(false)
 
   const { items, restaurantName } = useSelector((state) => state.cartReducer.selectedItems)
 
@@ -23,13 +25,18 @@ export default function ViewCart({ navigation }) {
   })
 
   const addOrderToFirebase = () => {
+    setLoading(true)
     db.collection("orders").add({
       items: items,
       restaurantName: restaurantName,
       createdAt: firebase.firestore.FieldValue.serverTimestamp()
     })
-    setModalVisible(false)
-    navigation.navigate('OrderCompleted')
+      .then( () => {
+        setTimeout(() => {
+          setLoading(false);
+          navigation.navigate("OrderCompleted")
+        }, 2500)
+      })
   }
 
   const checkoutModalContent = () => {
@@ -49,7 +56,10 @@ export default function ViewCart({ navigation }) {
           </View>
 
           <View style={styles.checkoutButtonContainer}>
-            <TouchableOpacity style={styles.checkoutButton} onPress={ () => addOrderToFirebase()}>
+            <TouchableOpacity style={styles.checkoutButton} onPress={ () => {
+              addOrderToFirebase()
+              setModalVisible(false)
+            }}>
               <Text style={styles.checkoutButtonText}>Payer</Text>
               <Text style={styles.checkoutButtonTotal}>{ total ? totalCurrency : ""}</Text>
             </TouchableOpacity>
@@ -84,6 +94,18 @@ export default function ViewCart({ navigation }) {
       ) : (
         <></>
       )}
+
+      { loading ? (
+        <View style={styles.loadingContainer}>
+          <LottieView
+            style={{ height: 200 }}
+            source={require('../../assets/animations/scanner.json')}
+            autoPlay
+            speed={3}
+          />
+        </View>
+      ) : <></> }
+
     </>
   );
 }
@@ -181,6 +203,18 @@ const styles = StyleSheet.create({
     right: 20,
     color: colors.white,
     fontSize: 15
+  },
+
+  // loading
+
+  loadingContainer: {
+    backgroundColor: colors.black,
+    position: 'absolute',
+    opacity: 0.6,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+    height: '100%'
   }
 })
 
